@@ -54,28 +54,28 @@ export class NavMenu extends Component {
 
                     <Navbar.Header>
                         <Navbar.Brand>
-                            <NavLink to={'/'} exact >Account-Owner  </NavLink>
+                            <NavLink to={'/'} exact >Home  </NavLink>
                         </Navbar.Brand>
                         <Navbar.Toggle />
                     </Navbar.Header>
 
                     <Navbar.Collapse>
                         <Nav>
-                            <LinkContainer to={'/owner-list'} exact>
+                            <LinkContainer to={'/counter'} exact>
                                 <NavItem eventKey={1}>
                                     Owner Actions
                             </NavItem>
                             </LinkContainer>
-                            <LinkContainer to={'/account-list'}>
+                            <LinkContainer to={'/fetch-data'}>
                                 <NavItem eventKey={2}>
-                                    Account Actions
+                                    fetch-data
                             </NavItem>
                             </LinkContainer>
 
 
 
                             <NavItem>
-                                <NavLink tag={Link} className="text-dark" to="/TestHome">Home</NavLink>
+                                <NavLink tag={Link} className="text-dark" to="/TestHome">TestHome</NavLink>
                             </NavItem>
 
                         </Nav>
