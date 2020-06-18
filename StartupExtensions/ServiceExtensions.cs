@@ -6,6 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using myTestCICD.Entities;
+using myTestCICD.Contracts;
+using myTestCICD.Repository;
 
 namespace myTestCICD.StartupExtensions
 {
@@ -19,6 +21,10 @@ namespace myTestCICD.StartupExtensions
             services.AddDbContext<RepositoryContext>(o => o.UseMySql(connectionString));
         }
 
+        public static void ConfigureRepositoryWrapper(this IServiceCollection services)
+        {
+            services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
+        }
 
     }
 }

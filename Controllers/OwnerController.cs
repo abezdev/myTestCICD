@@ -3,42 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using myTestCICD.Contracts;
 
 namespace myTestCICD.Controllers
 {
-    public class OwnerController
+    [ApiController]
+    [Route("api/owner")]
+    public class OwnerController : ControllerBase
     {
+        private IRepositoryWrapper _repository;
 
-        //public OwnerController(ILoggerManager logger, IRepositoryWrapper repository, IMapper mapper)
-        //{
-        //    _logger = logger;
-        //    _repository = repository;
-        //    _mapper = mapper;
-        //}
+        public OwnerController(IRepositoryWrapper repository)
+        {
+            _repository = repository;
+        }
 
-        //[HttpGet]
-        //public IActionResult GetAllOwners()
-        //{
-        //    //return StatusCode(500);
-        //    //return NotFound();//404
-        //    try
-        //    {
-        //        //var ownersfd = _repository.Owner.FindAll();
-        //        var owners = _repository.Owner.GetAllOwners();
+        [HttpGet]
+        public IActionResult GetAllOwners()
+        {
+            //return StatusCode(500);
+            //return NotFound();//404
+            try
+            {
+                //var ownersfd = _repository.Owner.FindAll();
+                var owners = _repository.Owner.GetAllOwners();
 
-        //        _logger.LogInfo($"Returned all owners from database.");
-
-        //        /* IEnumerable<OwnerDto> */
-        //        var ownersResult = _mapper.Map<IEnumerable<OwnerDto>>(owners);
-        //        return Ok(ownersResult);
-        //        //return Ok(owners);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        _logger.LogError($"Something went wrong inside GetAllOwners action: {ex.Message}");
-        //        return StatusCode(500, "Internal server error");
-        //    }
-        //}
+                return Ok(owners);
+                //return Ok(owners);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal server error");
+            }
+        }
 
 
 
