@@ -283,7 +283,9 @@ obj/
 /myTestCICD/appsettings.json
 /myTestCICD/Properties/launchSettings.json
 
-
+/appsettings.Development.json
+/appsettings.json
+/Properties/launchSettings.json
 
 
 
