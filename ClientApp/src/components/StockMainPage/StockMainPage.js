@@ -32,6 +32,7 @@ export class StockMainPage extends Component {
             submit: this.state.input,
             li: [...this.state.li, newGrocery]
         });
+        this.SendListToStockController();
     }
 
 
@@ -61,4 +62,27 @@ export class StockMainPage extends Component {
 
         );
     }
+
+    async SendListToStockController() {
+        //const response = await fetch('stock');
+        const response = await fetch('api/stock/SendAPICalls', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json, text/plain',
+                'Content-Type': 'application/json;charset=UTF-8'
+            },
+            //headers: {
+            //    'Accept': 'application/json; charset=utf-8',
+            //    'Content-Type': 'application/json;charset=UTF-8'
+            //},
+            body: 'it werkin'
+        }).then(response => response.json())
+
+        const data = await response.json();
+        
+
+
+        //this.setState({ forecasts: data, loading: false });
+    }
+
 };
