@@ -4,6 +4,7 @@ import { Layout } from './components/Layout';
 import { Home } from './components/Home';
 import { FetchData } from './components/FetchData';
 import { Counter } from './components/Counter';
+import { StockMainPage } from './components/StockMainPage/StockMainPage';
 
 import './custom.css'
 
@@ -20,7 +21,7 @@ export default class App extends Component {
                 <Route path='/counter' component={Counter} />
                 <Route path='/fetch-data' component={FetchData} />
                 <Route exact path='/TestHome' component={TestHome} />
-
+                <Route exact path='/StockMainPage' component={StockMainPage} />
             </Layout>
         );
     }

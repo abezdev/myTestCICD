@@ -24,5 +24,12 @@ namespace myTestCICD.Entities.Models
         [StringLength(100, ErrorMessage = "Address cannot be longer than 100 characters")]
         public string Address { get; set; }
 
+
     }
 }
+
+
+
+
+
+
