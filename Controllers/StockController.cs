@@ -22,7 +22,28 @@ namespace myTestCICD.Controllers
         };
         //HttpGet
         [HttpPost]//HttpPost
-        public string SendAPICalls()//[FromBody] string values) //from body
+        public string xSendAPICalls( [FromBody] List<int> values) //from body
+        {
+            //var rng = new Random();
+            //return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            //{
+            //    Date = DateTime.Now.AddDays(index),
+            //    TemperatureC = rng.Next(-20, 55),
+            //    Summary = Summaries[rng.Next(Summaries.Length)]
+            //})
+            //.ToArray();
+            foreach (int item in values)
+            {
+                Console.WriteLine(item);
+            }
+
+
+            return "hit this" + values;
+         }
+
+
+        [HttpPost]//HttpPost
+        public string SendAPICalls([FromForm] string values) //from body
         {
             //var rng = new Random();
             //return Enumerable.Range(1, 5).Select(index => new WeatherForecast
@@ -34,11 +55,24 @@ namespace myTestCICD.Controllers
             //.ToArray();
 
 
-            return "hit this";
-         }
+            return "hit this"+ values;
+        }
+
+        [HttpGet]//HttpPost
+        public string GETSendAPICalls( ) //from body
+        {
+            //var rng = new Random();
+            //return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            //{
+            //    Date = DateTime.Now.AddDays(index),
+            //    TemperatureC = rng.Next(-20, 55),
+            //    Summary = Summaries[rng.Next(Summaries.Length)]
+            //})
+            //.ToArray();
 
 
-
+            return "hit HttpGetHttpGetHttpGet";
+        }
 
 
 

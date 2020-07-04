@@ -25,6 +25,8 @@
 
   <ItemGroup>
     <Folder Include="ClientApp\src\containers\" />
+    <Folder Include="ClientApp\src\store\actions\" />
+    <Folder Include="ClientApp\src\store\reducers\" />
     <Folder Include="Entities\DataTransferObjects\" />
   </ItemGroup>
 

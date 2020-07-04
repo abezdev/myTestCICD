@@ -65,20 +65,32 @@ export class StockMainPage extends Component {
 
     async SendListToStockController() {
         //const response = await fetch('stock');
-        const response = await fetch('api/stock/SendAPICalls', {
+        //const response = await fetch('api/stock/xSendAPICalls', {
+        //    method: 'POST',
+        //    headers: {
+        //        'Accept': '*/*',
+        //        'Content-Type': 'application/json;charset=UTF-8'
+        //    },
+        //    //headers: {
+        //    //    'Accept': 'application/json; charset=utf-8',
+        //    //    'Content-Type': 'application/json;charset=UTF-8'
+        //    //},
+        //    body: JSON.stringify({
+        //        firstParam: 'yourValue'
+        //    })
+        //}).then(response => response.json())
+
+        const lkj = "a new string";
+        const numbers = [1, 2, 3, 4, 5];
+        const response = await fetch('api/stock/xSendAPICalls', {
             method: 'POST',
             headers: {
-                'Accept': 'application/json, text/plain',
-                'Content-Type': 'application/json;charset=UTF-8'
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
             },
-            //headers: {
-            //    'Accept': 'application/json; charset=utf-8',
-            //    'Content-Type': 'application/json;charset=UTF-8'
-            //},
-            body: 'it werkin'
-        }).then(response => response.json())
-
-        const data = await response.json();
+            body: JSON.stringify(numbers)
+        });
+        //const data = await response.json();
         
 
 
