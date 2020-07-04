@@ -22,7 +22,7 @@ namespace myTestCICD.Controllers
         };
         //HttpGet
         [HttpPost]//HttpPost
-        public string xSendAPICalls( [FromBody] List<int> values) //from body
+        public List<int> xSendAPICalls( [FromBody] List<int> values) //from body
         {
             //var rng = new Random();
             //return Enumerable.Range(1, 5).Select(index => new WeatherForecast
@@ -38,7 +38,7 @@ namespace myTestCICD.Controllers
             }
 
 
-            return "hit this" + values;
+            return values;
          }
 
 

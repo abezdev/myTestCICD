@@ -8,6 +8,7 @@ export class StockMainPage extends Component {
             input: '',
             submit: '',
             li: []
+
         };
 
         //TODO SEND LIST TO CONTEROLLER TO MAKE API CALLS
@@ -27,10 +28,10 @@ export class StockMainPage extends Component {
     }
     handleSubmit(event) {
         event.preventDefault()
-        let newGrocery = this.state.input
+        let newInput = this.state.input
         this.setState({
             submit: this.state.input,
-            li: [...this.state.li, newGrocery]
+            li: [...this.state.li, newInput]
         });
         this.SendListToStockController();
     }
@@ -48,6 +49,9 @@ export class StockMainPage extends Component {
 
         return (
             <div>
+
+                <h1>this.state.data => {this.state.data}</h1>
+
                 <form onSubmit={this.handleSubmit}>
                     <input
                         value={this.state.input}
@@ -89,7 +93,20 @@ export class StockMainPage extends Component {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(numbers)
-        });
+        })
+            .then(response => response.text())
+            .then(data => {
+                this.setState({ data })
+            });
+
+
+
+        //    .then(data => {
+        //    this.setState({ data })
+        //});
+
+
+
         //const data = await response.json();
         
 
